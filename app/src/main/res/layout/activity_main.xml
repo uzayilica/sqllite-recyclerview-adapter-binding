@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Ekle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnsil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Sil"
+        app:layout_constraintEnd_toStartOf="@+id/btnguncelle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnekle" />
+
+    <Button
+        android:id="@+id/btnguncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Güncelle"
+        app:layout_constraintBottom_toBottomOf="@+id/btnsil"
+        app:layout_constraintEnd_toStartOf="@+id/btngoruntule"
+        app:layout_constraintStart_toEndOf="@+id/btnsil"
+        app:layout_constraintTop_toBottomOf="@+id/btnekle" />
+
+    <Button
+        android:id="@+id/btngoruntule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Görüntüle"
+        app:layout_constraintBottom_toBottomOf="@+id/btnguncelle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnguncelle"
+        app:layout_constraintTop_toBottomOf="@+id/btnekle" />
+
+    <ScrollView
+        android:id="@+id/scrollviewuser"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/btnguncelle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listviewuser"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" /> <!-- ListView için belirli bir yükseklik -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/> <!-- RecyclerView'ı ekliyoruz -->
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
